@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlock Detector Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Deadlock Detector</h1>
+        <p>Enter edges (e.g., <b>P1 -> P2</b> means P1 is waiting for a resource held by P2)</p>
+        
+        <div class="input-section">
+            <input type="text" id="fromNode" placeholder="From (e.g. P1)">
+            <span>➜</span>
+            <input type="text" id="toNode" placeholder="To (e.g. P2)">
+            <button onclick="addEdge()">Add Edge</button>
+        </div>
+
+        <div class="display-section">
+            <h3>Current Dependency Graph:</h3>
+            <ul id="edgeList"></ul>
+        </div>
+
+        <div class="action-section">
+            <button class="detect-btn" onclick="detectDeadlock()">Check for Deadlock</button>
+            <button class="reset-btn" onclick="resetGraph()">Reset</button>
+        </div>
+
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
